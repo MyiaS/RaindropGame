@@ -1,25 +1,28 @@
 class Raindrop {
-  PVector loc,vel;
+  PVector loc,vel,a;
   int r,diam;
   
   Raindrop( float x, float y){
     x=0;
     y=random(height);
-     diam = 20;
-    loc = new PVector(random(diam, width-diam), random(diam, height-diam));
-    vel= PVector.random2D();
-    vel.mult(2);
+     diam = 50;
+    loc = new PVector(random(diam, width-diam), 0);
+    vel= new PVector(0,random(0,-10));
+    a= new PVector(0,0.001);
+    
   }
   
 
 void fall(){
-  loc.sub(vel);
+  loc.add(vel);
+  vel.add(a);
 }
 
 
 void display(){
     noStroke();
     ellipse(loc.x, loc.y, diam, diam);
+   
 }
 boolean isInContactWith(PVector mouse) {
   //mouse= sqrt(sq(mouseX)+sq(mouseY));
@@ -32,6 +35,7 @@ boolean isInContactWith(PVector mouse) {
  
 }
 void reset(){
-  loc.x=0;
+  loc.y=0;
+  loc.x=random(width);
 }
 }
