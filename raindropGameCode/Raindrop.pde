@@ -21,12 +21,13 @@ void fall(){
 
 void display(){
     noStroke();
+    fill(255);
     ellipse(loc.x, loc.y, diam, diam);
    
 }
 boolean isInContactWith(PVector mouse) {
-  //mouse= sqrt(sq(mouseX)+sq(mouseY));
- if( dist(mouse.x,mouse.y,loc.x,loc.y)<diam/2){
+  //mouse= sqrt(sq(mouseX)+sq(mouseY))
+  if(dist( mouse.x,mouse.y,loc.x,loc.y)<diam/2){
   return true;
  }
  else {
