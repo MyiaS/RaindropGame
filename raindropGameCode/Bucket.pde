@@ -5,7 +5,7 @@ class Bucket {
   Bucket(float x, float y) {
     x=mouseX;
     y=mouseY;
-    diam=50;
+    diam=75;
     loc = new PVector (mouseX, mouseY);
   }
   void display() {
