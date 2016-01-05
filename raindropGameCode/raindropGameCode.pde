@@ -49,7 +49,8 @@ void draw() {
     }
 
     if (a.loc.y > height + a.diam/2) {     //check to see if the raindrop goes below the bottom of the screen
-      a.reset();                           //if it does, reset the raindrop
+      a.reset(); //if it does, reset the raindrop
+      mode=3;
     }
   }
   }
@@ -62,6 +63,12 @@ void draw() {
     textSize(50);
     textAlign( CENTER);
     fill(255);
+  }
+  if(mode==3){
+    background(0);
+    text("YOU LOSE", width/2,height/2);
+    fill(255);
+    textSize(30);
   }
   
 }
